@@ -16,7 +16,7 @@ export class AppComponent  {
   postit : Array<Postit> = [];
 
   constructor(public service: KvaasService) {}
-
+ 
   async getNewKey() {
     try {
       this.chiave = await this.service.getKey();

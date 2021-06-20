@@ -26,8 +26,8 @@ export class KvaasService {
         })
       .then(
         data => {
-          if(data === null) return null;
-          if(data === '{}') return [];
+          if(data === null) return null; // la chiave inserita non era valida, non posso fare il parsing
+          if(data === '{}') return []; // non c'è nessun postit registrato
           var obj = JSON.parse(data);
           return obj;
       });
