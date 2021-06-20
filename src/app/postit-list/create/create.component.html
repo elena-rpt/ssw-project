@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Crea un nuovo post-it</h3>
+  Titolo: <input #title>
+  <br>
+  <textarea #content (click)="clean()">Scrivi il contenuto</textarea>
+  <br>
+  Importante <input type="checkbox" #important>
+  <br>
+  <button (click)="createPostit(title.value, content.value, important.checked)"> Crea </button>
+</div>

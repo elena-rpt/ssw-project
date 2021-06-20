@@ -1,0 +1,10 @@
+<div class="container" *ngIf="showLogin">
+  <h1>Benvenuto!</h1>
+  <p>Inserisci la tua chiave<p>
+  <input #box (keyup.enter)="showPostit(box.value)">
+  <p>Oppure<p>
+  <button (click)="getNewKey()">Richiedi una chiave</button>
+  <p *ngIf="showKey"> La tua chiave è {{chiave}} </p>
+</div>
+
+<app-postit-list *ngIf="visible" [chiave]="chiave" [postit]="postit" [service]="service"></app-postit-list>

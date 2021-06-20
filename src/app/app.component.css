@@ -1,0 +1,13 @@
+p {
+  font-family: Lato;
+}
+
+.container {
+  text-align: center;
+  background-color: #8aacc8;
+  padding: 20px;
+  width: 300px;
+  margin: auto;
+  border-radius: 0px 20px 0px 20px;
+}
+

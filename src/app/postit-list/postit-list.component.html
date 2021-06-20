@@ -1,0 +1,16 @@
+<h1> I tuoi post-it </h1>
+<h3 *ngIf="postit.length===0">Per ora non ci sono post-it, creane uno!</h3>
+<button (click)="showImportant()">{{impButton}}</button>
+<p> Seleziona un postit per vedere il suo contenuto </p>
+<ul>
+  <div *ngFor='let elem of postit'> 
+    <li class="listElem" *ngIf="showAll || elem.importante">
+      <p class="title">{{elem.titolo}}</p>
+      <input type="checkbox" (click)="select(elem)">
+      <p *ngIf="elem.selected">{{elem.contenuto}}</p>
+    </li>
+  </div>
+</ul>
+
+<app-create [postit]="postit" [chiave]="chiave" [service]="service" ></app-create>
+<app-delete [postit]="postit" [chiave]="chiave" [service]="service" (deletionEvent)="refreshList($event)" ></app-delete>
