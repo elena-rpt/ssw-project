@@ -21,15 +21,20 @@ export class DeleteComponent implements OnInit {
   ngOnInit() {}
 
   async deletePostit(title : string) {
-    // elimino, se presente, il postit dal titoli indicato dall'array
-    this.postit = this.postit.filter(el => el.titolo !== title);
-    try {
-      await this.service.putData(this.chiave, this.postit);
-    } catch(error) {
-      alert('Operazione fallita,riprova più tardi');
-      return;
+    // controllo se l'elemento è presente
+    if (this.postit.some(el => el.titolo === title)) {
+      // elimino il postit dal titolo indicato dall'array
+      let copy = this.postit;
+      this.postit = this.postit.filter(el => el.titolo !== title);
+      try {
+        await this.service.putData(this.chiave, this.postit);
+      } catch(error) {
+        alert('Operazione fallita,riprova più tardi');
+        this.postit = copy;
+        return;
+      }
+      this.deletionEvent.emit(this.postit);
     }
-    this.deletionEvent.emit(this.postit);
     // ripulisco il form
     this.titolo.nativeElement.value="";
   }

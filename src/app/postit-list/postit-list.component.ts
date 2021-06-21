@@ -6,7 +6,7 @@ export class Postit {
   contenuto : string;
   importante : boolean = false;
   selected : boolean = false;
-}
+} 
 
 @Component({
   selector: 'app-postit-list',
