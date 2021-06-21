@@ -1,4 +1,4 @@
-# Progettino per l'esame di Sviluppo dei Servizi web
+# Progettino per l'esame di Sviluppo dei Servizi Web
 
 Il sistema è composto da quattro componenti e da un service.
 
