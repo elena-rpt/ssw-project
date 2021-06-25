@@ -5,7 +5,7 @@
 <ul>
   <div *ngFor='let elem of postit'> 
     <li class="listElem" *ngIf="showAll || elem.importante">
-      <p class="title">{{elem.titolo}}</p>
+      <p class="title"><b>{{elem.titolo}}</b></p>
       <input type="checkbox" (click)="select(elem)">
       <p *ngIf="elem.selected">{{elem.contenuto}}</p>
     </li>
